@@ -55,3 +55,18 @@ Route::get('/about', function () {
 })->name('tentang-saya');
 
 Route::get('/Profile', [ProfileController::class, 'index']);
+
+
+//CRUD
+
+// Route::get('/blog', function() {
+//     return view('');
+// });
+
+
+//CRUD
+Route::get('/blog', 'App\Http\Controllers\BlogController@index');
+
+Route::get('/blog/create', 'App\Http\Controllers\BlogController@create')->name('blog.create');
+
+Route::post('/blog/store', 'App\Http\Controllers\BlogController@store')->name('blog.store');
